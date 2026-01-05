@@ -351,3 +351,97 @@ body {
 .social-card.yt {
   animation-delay: 0.5s;
 }
+
+/* ===============================
+   RESPONSIVE MOBILE
+=============================== */
+@media (max-width: 768px) {
+  /* NAVBAR */
+  .navbar {
+    padding: 0 20px;
+    height: 60px;
+  }
+
+  .menu {
+    gap: 15px;
+  }
+
+  .menu a {
+    font-size: 12px;
+  }
+
+  /* HOME */
+  .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 35px;
+    padding-top: 100px;
+  }
+
+  .athiyah-img {
+    width: 170px;
+  }
+
+  .card {
+    max-width: 90%;
+    padding: 30px;
+  }
+
+  .card h1 {
+    font-size: 26px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+
+  .btn-masuk {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+
+  /* PAGE */
+  .page-title {
+    font-size: 26px;
+  }
+
+  .page p {
+    font-size: 13px;
+    padding: 0 15px;
+  }
+
+  /* SOCIAL GRID */
+  .social-grid {
+    gap: 25px;
+  }
+
+  .social-card {
+    max-width: 90%;
+    padding: 28px;
+  }
+
+  .social-card i {
+    font-size: 44px;
+  }
+
+  /* FOOTER */
+  .footer {
+    font-size: 12px;
+    padding: 22px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .card h1 {
+    font-size: 22px;
+  }
+
+  .athiyah-img {
+    width: 150px;
+  }
+
+  .btn-masuk {
+    width: 100%;
+    text-align: center;
+  }
+}

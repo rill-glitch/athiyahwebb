@@ -1,0 +1,353 @@
+/* ===============================
+   RESET & GLOBAL
+=============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  color: #fff;
+  overflow-x: hidden;
+  background: #000;
+}
+
+/* ===============================
+   ANIME BLUR BACKGROUND
+=============================== */
+.background {
+  position: fixed;
+  inset: 0;
+  background: url("background.jpg") center/cover no-repeat;
+  filter: blur(4px) brightness(0.45);
+  transform: scale(1.1);
+  z-index: -3;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 120, 180, 0.25),
+    rgba(0, 0, 0, 0.85)
+  );
+}
+
+/* ===============================
+   NAVBAR (GLASS)
+=============================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 180, 220, 0.15);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 25px rgba(255, 120, 180, 0.4);
+  z-index: 10;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.85;
+  transition: 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: #ff9ed0;
+  text-shadow: 0 0 10px #ff9ed0;
+}
+
+/* ===============================
+   HOME LAYOUT
+=============================== */
+.container {
+  min-height: 100vh;
+  padding-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+/* ===============================
+   ANIME IMAGE
+=============================== */
+.athiyah-img {
+  width: 220px;
+  border-radius: 25px;
+  animation: floatImg 4s ease-in-out infinite;
+  box-shadow: 0 0 40px rgba(255, 150, 200, 0.7);
+}
+
+@keyframes floatImg {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+/* ===============================
+   GLASS CARD (HOME)
+=============================== */
+.card {
+  max-width: 420px;
+  padding: 45px;
+  border-radius: 30px;
+  background: rgba(255, 200, 230, 0.15);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 45px rgba(255, 140, 200, 0.6);
+  animation: fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card h1 {
+  font-size: 32px;
+  background: linear-gradient(90deg, #ff9ed0, #ffd1e8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card p {
+  margin-top: 15px;
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* ===============================
+   BUTTON
+=============================== */
+.btn-masuk {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 40px;
+  border-radius: 40px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff7ac8, #ff4fa0);
+  box-shadow: 0 0 30px rgba(255, 120, 200, 1);
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 25px rgba(255, 120, 200, 0.8);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 45px rgba(255, 160, 220, 1);
+  }
+}
+
+/* ===============================
+   PAGE (ABOUT / SOSIAL)
+=============================== */
+.page {
+  min-height: 100vh;
+  padding-top: 130px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ===============================
+   PAGE TITLE
+=============================== */
+.page-title {
+  font-size: 34px;
+  margin-bottom: 10px;
+  color: #ffd1e8;
+  text-shadow: 0 0 15px rgba(255, 150, 220, 0.9);
+}
+
+.page p {
+  margin-bottom: 50px;
+  opacity: 0.85;
+}
+
+/* ===============================
+   SOCIAL GRID
+=============================== */
+.social-grid {
+  width: 100%;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+/* ===============================
+   SOCIAL CARD + ANIMASI
+=============================== */
+.social-card {
+  width: 100%;
+  max-width: 260px;
+  padding: 35px;
+  border-radius: 26px;
+  text-align: center;
+  background: rgba(255, 200, 230, 0.18);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 0 30px rgba(255, 150, 200, 0.5);
+
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+}
+
+/* MASUK */
+@keyframes cardIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* FLOAT */
+@keyframes floatCard {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+/* DELAY SATU-SATU */
+.social-card:nth-child(1) {
+  animation-delay: 0.2s, 0s;
+}
+.social-card:nth-child(2) {
+  animation-delay: 0.5s, 0.2s;
+}
+.social-card:nth-child(3) {
+  animation-delay: 0.8s, 0.4s;
+}
+
+/* HOVER */
+.social-card:hover {
+  transform: translateY(-18px) scale(1.08);
+  box-shadow: 0 0 60px rgba(255, 170, 220, 1);
+}
+
+.social-card h2 {
+  color: #ffd1e8;
+  margin-bottom: 10px;
+}
+
+.social-card p {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.social-card a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 28px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #ff7ac8, #ff4fa0);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* ===============================
+   FOOTER GLOBAL (ALL PAGE)
+=============================== */
+.footer {
+  width: 100%;
+  padding: 28px 0;
+  margin-top: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #ffd1e8;
+
+  background: rgba(255, 180, 220, 0.12);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 -6px 25px rgba(255, 120, 180, 0.35);
+}
+
+/* ===============================
+   SOCIAL ICON ANIME
+=============================== */
+.social-card i {
+  font-size: 52px;
+  margin-bottom: 15px;
+  transition: 0.4s ease;
+}
+
+/* WARNA IKON */
+.social-card.ig i {
+  color: #ff4fd8;
+}
+
+.social-card.tt i {
+  color: #00f2ff;
+}
+
+.social-card.yt i {
+  color: #ff3b3b;
+}
+
+/* HOVER ANIME */
+.social-card:hover i {
+  transform: scale(1.25) rotate(5deg);
+  filter: drop-shadow(0 0 25px currentColor);
+}
+
+/* DELAY MASUK */
+.social-card {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.social-card.ig {
+  animation-delay: 0.1s;
+}
+.social-card.tt {
+  animation-delay: 0.3s;
+}
+.social-card.yt {
+  animation-delay: 0.5s;
+}

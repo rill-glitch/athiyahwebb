@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Athiyah Room's</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FONT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- BACKGROUND BLUR -->
+    <div class="background"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo">👻 Athiyah</div>
+      <ul class="menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="sosial.html">Media Sosial</a></li>
+        <li><a href="about.html">Tentang</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO / HOME -->
+    <section class="container">
+      <!-- IMAGE ANIME -->
+      <img
+        src="athiyah_2_image_pecah.jpeg"
+        alt="Athiyah Anime"
+        class="athiyah-img"
+      />
+
+      <!-- GLASS CARD -->
+      <div class="card">
+        <h1>Selamat Datang</h1>
+        <p>
+          Selamat datang di <b>Athiyah Room's</b> 🌸<br />
+          Komunitas anime yang hangat, lucu, dan penuh vibes positif.
+        </p>
+
+        <a href="sosial.html" class="btn-masuk"> Masuk Sekarang ✨ </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">© 2026 • RILL CODE</footer>
+
+    <!-- LOGIN CHECK -->
+    <script>
+      if (localStorage.getItem("isLogin") !== "true") {
+        window.location.replace("login.html");
+      }
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

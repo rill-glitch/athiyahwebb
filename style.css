@@ -351,77 +351,42 @@ body {
 .social-card.yt {
   animation-delay: 0.5s;
 }
-
 /* ===============================
-   RESPONSIVE MOBILE
+  MOBILE TAMPILAN (MEDIA SOSIAL)
 =============================== */
 @media (max-width: 768px) {
-  /* NAVBAR */
-  .navbar {
-    padding: 0 20px;
-    height: 60px;
-  }
-
-  .menu {
-    gap: 15px;
-  }
-
-  .menu a {
-    font-size: 12px;
+  /* FIX VIEWPORT MOBILE */
+  body {
+    min-height: auto;
   }
 
   /* HOME */
   .container {
+    min-height: auto;
     flex-direction: column;
     text-align: center;
     gap: 35px;
     padding-top: 100px;
   }
 
-  .athiyah-img {
-    width: 170px;
-  }
-
-  .card {
-    max-width: 90%;
-    padding: 30px;
-  }
-
-  .card h1 {
-    font-size: 26px;
-  }
-
-  .card p {
-    font-size: 13px;
-  }
-
-  .btn-masuk {
-    padding: 12px 30px;
-    font-size: 14px;
-  }
-
-  /* PAGE */
-  .page-title {
-    font-size: 26px;
-  }
-
-  .page p {
-    font-size: 13px;
-    padding: 0 15px;
+  /* PAGE (ABOUT & SOSIAL) */
+  .page {
+    min-height: auto;
+    padding-top: 100px;
+    padding-bottom: 180px;
   }
 
   /* SOCIAL GRID */
   .social-grid {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 15px;
     gap: 25px;
   }
 
   .social-card {
-    max-width: 90%;
+    max-width: 100%;
     padding: 28px;
-  }
-
-  .social-card i {
-    font-size: 44px;
   }
 
   /* FOOTER */
@@ -431,13 +396,14 @@ body {
   }
 }
 
+/* MOBILE KECIL */
 @media (max-width: 480px) {
-  .card h1 {
-    font-size: 22px;
+  .page {
+    padding-bottom: 220px;
   }
 
-  .athiyah-img {
-    width: 150px;
+  .social-card {
+    padding: 24px;
   }
 
   .btn-masuk {

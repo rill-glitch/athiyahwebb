@@ -442,66 +442,126 @@ body {
 }
 
 /* ===============================
-   FIX: TOMBOL WA TIDAK NYALA TERUS
+   FIX SOSIAL PAGE MOBILE (FINAL)
 =============================== */
 
-.btn-masuk {
-  box-shadow: 0 0 20px rgba(255, 120, 200, 0.6);
-  transition: 0.4s ease;
-}
-
-/* BARU NYALA SAAT DISENTUH */
-.btn-masuk:hover {
-  animation: pulse 2.5s infinite;
-  box-shadow: 0 0 45px rgba(255, 160, 220, 1);
-  transform: scale(1.08);
-}
-
-/* ===============================
-   NAVBAR TANPA HAMBURGER (MOBILE FIX)
-=============================== */
-
-/* default desktop aman */
-.menu {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-}
-
-/* HP & tablet */
 @media (max-width: 768px) {
-  .navbar {
-    height: auto;
-    padding: 15px 20px;
-
-    flex-direction: column;
-    gap: 12px;
+  /* NAVBAR lebih tinggi → konten diturunin */
+  .page {
+    padding-top: 180px; /* ini kunci */
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
-  .logo {
+  /* JUDUL */
+  .page-title {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .page p {
+    font-size: 13px;
+    margin-bottom: 35px;
+  }
+
+  /* GRID JADI 1 KOLOM */
+  .social-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* CARD FULL WIDTH */
+  .social-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 26px 22px;
+  }
+
+  /* ICON */
+  .social-card i {
+    font-size: 34px;
+    margin-bottom: 12px;
+  }
+
+  .social-card h2 {
     font-size: 18px;
   }
 
-  .menu {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap; /* INI KUNCI */
-    gap: 14px 22px;
-  }
-
-  .menu a {
+  .social-card p {
     font-size: 13px;
-    padding: 6px 10px;
+  }
+
+  .social-card a {
+    margin-top: 14px;
+    width: 100%;
+    text-align: center;
   }
 }
 
-/* HP kecil */
+/* HP KECIL */
 @media (max-width: 480px) {
-  .menu a {
-    font-size: 12px;
+  .page {
+    padding-top: 200px;
+  }
+
+  .page-title {
+    font-size: 22px;
   }
 }
+
+/* ===============================
+   HAMBURGER MENU (MOBILE)
+=============================== */
 
 .hamburger {
   display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .menu {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 26px;
+
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(18px);
+
+    transform: translateX(100%);
+    transition: 0.4s ease;
+    z-index: 9;
+  }
+
+  .menu.show {
+    transform: translateX(0);
+  }
+
+  .menu a {
+    font-size: 18px;
+  }
 }

@@ -1,20 +1,15 @@
-/* ===============================
-   HAMBURGER MENU (MOBILE)
-=============================== */
-function toggleMenu() {
-  const menu = document.querySelector(".menu");
-  menu.classList.toggle("show");
-}
-
-/* ===============================
-   AUTO TUTUP MENU SAAT LINK DIKLIK
-=============================== */
 document.addEventListener("DOMContentLoaded", () => {
-  const links = document.querySelectorAll(".menu a");
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("menu");
 
-  links.forEach((link) => {
+  hamburger.addEventListener("click", () => {
+    menu.classList.toggle("show");
+  });
+
+  // auto tutup menu saat link diklik
+  document.querySelectorAll(".menu a").forEach((link) => {
     link.addEventListener("click", () => {
-      document.querySelector(".menu").classList.remove("show");
+      menu.classList.remove("show");
     });
   });
 });

@@ -47,13 +47,20 @@ body {
   width: 100%;
   height: 70px;
   padding: 0 40px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   background: rgba(255, 180, 220, 0.15);
   backdrop-filter: blur(15px);
   box-shadow: 0 0 25px rgba(255, 120, 180, 0.4);
   z-index: 10;
+}
+
+.logo {
+  text-align: center;
+  letter-spacing: 1px;
 }
 
 .menu {
@@ -82,10 +89,12 @@ body {
 .container {
   min-height: 100vh;
   padding-top: 120px;
+
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 60px;
+  text-align: center;
 }
 
 /* ===============================
@@ -115,10 +124,13 @@ body {
   max-width: 420px;
   padding: 45px;
   border-radius: 30px;
+
   background: rgba(255, 200, 230, 0.15);
   backdrop-filter: blur(20px);
   box-shadow: 0 0 45px rgba(255, 140, 200, 0.6);
+
   animation: fadeUp 1.2s ease;
+  text-align: center;
 }
 
 @keyframes fadeUp {
@@ -137,26 +149,32 @@ body {
   background: linear-gradient(90deg, #ff9ed0, #ffd1e8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 
 .card p {
   margin-top: 15px;
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.8;
   opacity: 0.9;
+  text-align: center;
 }
 
 /* ===============================
    BUTTON
 =============================== */
 .btn-masuk {
+  animation: pulse 2.5s infinite;
   display: inline-block;
   margin-top: 30px;
   padding: 14px 40px;
+
   border-radius: 40px;
   text-decoration: none;
   color: #fff;
   font-weight: bold;
+  text-align: center;
+
   background: linear-gradient(90deg, #ff7ac8, #ff4fa0);
   box-shadow: 0 0 30px rgba(255, 120, 200, 1);
   animation: pulse 2.5s infinite;
@@ -175,31 +193,34 @@ body {
 }
 
 /* ===============================
-   PAGE (ABOUT / SOSIAL)
+   PAGE (ABOUT / SOSIAL / SUPPORT)
 =============================== */
 .page {
   min-height: 100vh;
   padding-top: 130px;
   padding-bottom: 80px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-/* ===============================
-   PAGE TITLE
-=============================== */
 .page-title {
   font-size: 34px;
   margin-bottom: 10px;
   color: #ffd1e8;
   text-shadow: 0 0 15px rgba(255, 150, 220, 0.9);
+  text-align: center;
 }
 
 .page p {
   margin-bottom: 50px;
   opacity: 0.85;
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ===============================
@@ -208,6 +229,7 @@ body {
 .social-grid {
   width: 100%;
   max-width: 900px;
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 40px;
@@ -215,7 +237,7 @@ body {
 }
 
 /* ===============================
-   SOCIAL CARD + ANIMASI
+   SOCIAL CARD
 =============================== */
 .social-card {
   width: 100%;
@@ -223,58 +245,30 @@ body {
   padding: 35px;
   border-radius: 26px;
   text-align: center;
+
   background: rgba(255, 200, 230, 0.18);
   backdrop-filter: blur(18px);
   box-shadow: 0 0 30px rgba(255, 150, 200, 0.5);
 
   opacity: 0;
   transform: translateY(40px) scale(0.95);
+  animation: fadeUp 0.8s ease forwards;
 }
 
-/* MASUK */
-@keyframes cardIn {
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* FLOAT */
-@keyframes floatCard {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-14px);
-  }
-}
-
-/* DELAY SATU-SATU */
-.social-card:nth-child(1) {
-  animation-delay: 0.2s, 0s;
-}
-.social-card:nth-child(2) {
-  animation-delay: 0.5s, 0.2s;
-}
-.social-card:nth-child(3) {
-  animation-delay: 0.8s, 0.4s;
-}
-
-/* HOVER */
 .social-card:hover {
   transform: translateY(-18px) scale(1.08);
   box-shadow: 0 0 60px rgba(255, 170, 220, 1);
 }
 
-.social-card h2 {
-  color: #ffd1e8;
-  margin-bottom: 10px;
+.social-card h2,
+.social-card p {
+  text-align: center;
 }
 
 .social-card p {
   font-size: 13px;
   opacity: 0.85;
+  line-height: 1.7;
 }
 
 .social-card a {
@@ -282,13 +276,15 @@ body {
   margin-top: 15px;
   padding: 10px 28px;
   border-radius: 30px;
+
   background: linear-gradient(90deg, #ff7ac8, #ff4fa0);
   color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
+
 /* ===============================
-   FOOTER GLOBAL (ALL PAGE)
+   FOOTER
 =============================== */
 .footer {
   width: 100%;
@@ -305,109 +301,158 @@ body {
 
   background: rgba(255, 180, 220, 0.12);
   backdrop-filter: blur(12px);
-
   box-shadow: 0 -6px 25px rgba(255, 120, 180, 0.35);
+
+  text-align: center;
 }
 
 /* ===============================
-   SOCIAL ICON ANIME
-=============================== */
-.social-card i {
-  font-size: 52px;
-  margin-bottom: 15px;
-  transition: 0.4s ease;
-}
-
-/* WARNA IKON */
-.social-card.ig i {
-  color: #ff4fd8;
-}
-
-.social-card.tt i {
-  color: #00f2ff;
-}
-
-.social-card.yt i {
-  color: #ff3b3b;
-}
-
-/* HOVER ANIME */
-.social-card:hover i {
-  transform: scale(1.25) rotate(5deg);
-  filter: drop-shadow(0 0 25px currentColor);
-}
-
-/* DELAY MASUK */
-.social-card {
-  animation: fadeUp 0.8s ease forwards;
-}
-
-.social-card.ig {
-  animation-delay: 0.1s;
-}
-.social-card.tt {
-  animation-delay: 0.3s;
-}
-.social-card.yt {
-  animation-delay: 0.5s;
-}
-/* ===============================
-  MOBILE TAMPILAN (MEDIA SOSIAL)
+   MOBILE
 =============================== */
 @media (max-width: 768px) {
-  /* FIX VIEWPORT MOBILE */
-  body {
-    min-height: auto;
-  }
-
-  /* HOME */
   .container {
-    min-height: auto;
     flex-direction: column;
-    text-align: center;
     gap: 35px;
     padding-top: 100px;
   }
 
-  /* PAGE (ABOUT & SOSIAL) */
-  .page {
-    min-height: auto;
-    padding-top: 100px;
-    padding-bottom: 180px;
-  }
-
-  /* SOCIAL GRID */
   .social-grid {
-    width: 100%;
-    max-width: 100%;
     padding: 0 15px;
     gap: 25px;
   }
 
-  .social-card {
-    max-width: 100%;
-    padding: 28px;
-  }
-
-  /* FOOTER */
   .footer {
     font-size: 12px;
     padding: 22px 0;
   }
 }
 
-/* MOBILE KECIL */
 @media (max-width: 480px) {
-  .page {
-    padding-bottom: 220px;
+  .btn-masuk {
+    width: 100%;
   }
 
   .social-card {
     padding: 24px;
   }
+}
 
-  .btn-masuk {
-    width: 100%;
-    text-align: center;
+/* =====================================
+   CARD ANIMATION SMOOTH + DELAY
+   (TANPA UBAH EFEK LAMA)
+===================================== */
+
+/* ANIMASI MASUK YANG LEBIH HIDUP */
+@keyframes cardSoftIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.94);
   }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* HOME CARD */
+.card {
+  opacity: 0;
+  animation: cardSoftIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+/* SOCIAL CARD BASE */
+.social-card {
+  opacity: 0;
+  animation: cardSoftIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* DELAY SATU-SATU (AUTO TERLIHAT HIDUP) */
+.social-card:nth-child(1) {
+  animation-delay: 0.15s;
+}
+.social-card:nth-child(2) {
+  animation-delay: 0.35s;
+}
+.social-card:nth-child(3) {
+  animation-delay: 0.55s;
+}
+.social-card:nth-child(4) {
+  animation-delay: 0.75s;
+}
+.social-card:nth-child(5) {
+  animation-delay: 0.95s;
+}
+.social-card:nth-child(6) {
+  animation-delay: 1.15s;
+}
+
+/* =====================================
+   FLOAT ANIMATION (NAIK TURUN HALUS)
+   TANPA MERUSAK EFEK LAMA
+===================================== */
+
+@keyframes floatSoft {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* HOME CARD FLOAT */
+.card {
+  animation: cardSoftIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    floatSoft 4.5s ease-in-out infinite;
+  animation-delay: 0.2s, 1.6s; /* delay masuk dulu, baru float */
+}
+
+/* SOCIAL CARD FLOAT */
+.social-card {
+  animation: cardSoftIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    floatSoft 5s ease-in-out infinite;
+}
+
+/* DELAY FLOAT BIAR KELIHATAN HIDUP */
+.social-card:nth-child(1) {
+  animation-delay: 0.15s, 1.2s;
+}
+.social-card:nth-child(2) {
+  animation-delay: 0.35s, 1.6s;
+}
+.social-card:nth-child(3) {
+  animation-delay: 0.55s, 2s;
+}
+.social-card:nth-child(4) {
+  animation-delay: 0.75s, 2.4s;
+}
+.social-card:nth-child(5) {
+  animation-delay: 0.95s, 2.8s;
+}
+.social-card:nth-child(6) {
+  animation-delay: 1.15s, 3.2s;
+}
+
+/* ===============================
+   FIX: TOMBOL WA TIDAK NYALA TERUS
+=============================== */
+
+.btn-masuk {
+  box-shadow: 0 0 20px rgba(255, 120, 200, 0.6);
+  transition: 0.4s ease;
+}
+
+/* BARU NYALA SAAT DISENTUH */
+.btn-masuk:hover {
+  animation: pulse 2.5s infinite;
+  box-shadow: 0 0 45px rgba(255, 160, 220, 1);
+  transform: scale(1.08);
 }

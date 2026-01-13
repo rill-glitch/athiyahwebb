@@ -458,101 +458,50 @@ body {
 }
 
 /* ===============================
-   MOBILE FIX TOTAL (HP)
+   NAVBAR TANPA HAMBURGER (MOBILE FIX)
 =============================== */
-@media (max-width: 768px) {
-  /* NAVBAR */
-  .navbar {
-    padding: 0 20px;
-  }
 
-  .menu {
-    position: fixed;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
+/* default desktop aman */
+.menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+/* HP & tablet */
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    padding: 15px 20px;
 
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(20px);
-
-    transform: translateX(100%);
-    transition: 0.4s ease;
+    gap: 12px;
   }
 
-  .menu.show {
-    transform: translateX(0);
-  }
-
-  .menu a {
+  .logo {
     font-size: 18px;
   }
 
-  /* HAMBURGER */
-  .hamburger {
-    display: flex;
-  }
-
-  /* CONTAINER */
-  .container {
-    padding-top: 110px;
-    padding-left: 20px;
-    padding-right: 20px;
-    gap: 30px;
-  }
-
-  /* IMAGE */
-  .athiyah-img {
-    width: 180px;
-  }
-
-  /* CARD */
-  .card {
+  .menu {
     width: 100%;
-    max-width: 100%;
-    padding: 30px;
+    justify-content: center;
+    flex-wrap: wrap; /* INI KUNCI */
+    gap: 14px 22px;
   }
 
-  .card h1 {
-    font-size: 26px;
-  }
-
-  .card p {
+  .menu a {
     font-size: 13px;
-  }
-
-  /* PAGE */
-  .page-title {
-    font-size: 26px;
-  }
-
-  .page p {
-    font-size: 13px;
-    padding: 0 15px;
-  }
-
-  /* SOCIAL CARD */
-  .social-card {
-    max-width: 100%;
+    padding: 6px 10px;
   }
 }
 
-/* HAMBURGER */
+/* HP kecil */
+@media (max-width: 480px) {
+  .menu a {
+    font-size: 12px;
+  }
+}
+
 .hamburger {
   display: none;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: #fff;
-  border-radius: 3px;
 }

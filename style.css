@@ -1,5 +1,40 @@
 /* ===============================
-   RESET & GLOBAL
+   VIDEO BACKGROUND
+=============================== */
+.video-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  overflow: hidden;
+}
+
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(1px) brightness(0.35) saturate(0.8);
+}
+
+/* OVERLAY GELAP ELEGAN */
+.video-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top, rgba(180, 190, 255, 0.15), transparent 60%),
+    linear-gradient(to bottom, rgba(5, 5, 15, 0.6), rgba(0, 0, 0, 0.95));
+}
+
+/* PASTIKAN KONTEN DI ATAS VIDEO */
+.navbar,
+.container,
+.footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===============================
+   RESET & GLOBAL — COLUMBINA
 =============================== */
 * {
   margin: 0;
@@ -10,20 +45,20 @@
 
 body {
   min-height: 100vh;
-  color: #fff;
+  background: radial-gradient(circle at top, #1b1e2e, #05060a);
+  color: #eef1ff;
   overflow-x: hidden;
-  background: #000;
 }
 
 /* ===============================
-   ANIME BLUR BACKGROUND
+   BACKGROUND — DIVINE SILENCE
 =============================== */
 .background {
   position: fixed;
   inset: 0;
   background: url("background.jpg") center/cover no-repeat;
-  filter: blur(4px) brightness(0.45);
-  transform: scale(1.1);
+  filter: blur(6px) brightness(0.35) saturate(0.7);
+  transform: scale(1.15);
   z-index: -3;
 }
 
@@ -31,56 +66,58 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 120, 180, 0.25),
-    rgba(0, 0, 0, 0.85)
-  );
+  background:
+    radial-gradient(circle at top, rgba(180, 190, 255, 0.15), transparent 60%),
+    linear-gradient(to bottom, rgba(10, 10, 20, 0.6), rgba(0, 0, 0, 0.95));
 }
 
 /* ===============================
-   NAVBAR (GLASS)
+   NAVBAR — HOLY GLASS
 =============================== */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 70px;
+  height: 72px;
   padding: 0 40px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  background: rgba(255, 180, 220, 0.15);
-  backdrop-filter: blur(15px);
-  box-shadow: 0 0 25px rgba(255, 120, 180, 0.4);
+  background: rgba(220, 225, 255, 0.08);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 0 40px rgba(180, 190, 255, 0.25);
   z-index: 10;
 }
 
 .logo {
-  text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #f2f4ff;
+  text-shadow: 0 0 12px rgba(200, 210, 255, 0.5);
 }
 
 .menu {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 32px;
 }
 
 .menu a {
-  color: #fff;
+  color: #dfe3ff;
   text-decoration: none;
   font-size: 14px;
-  opacity: 0.85;
-  transition: 0.3s;
+  opacity: 0.75;
+  letter-spacing: 1px;
+  transition: 0.4s ease;
 }
 
 .menu a:hover,
 .menu a.active {
-  color: #ff9ed0;
-  text-shadow: 0 0 10px #ff9ed0;
+  opacity: 1;
+  color: #ffffff;
+  text-shadow: 0 0 14px rgba(210, 220, 255, 0.9);
 }
 
 /* ===============================
@@ -88,117 +125,95 @@ body {
 =============================== */
 .container {
   min-height: 100vh;
-  padding-top: 120px;
-
+  padding-top: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 60px;
+  gap: 70px;
   text-align: center;
 }
 
 /* ===============================
-   ANIME IMAGE
+   IMAGE — FLOATING SERAPH
 =============================== */
 .athiyah-img {
   width: 220px;
-  border-radius: 25px;
-  animation: floatImg 4s ease-in-out infinite;
-  box-shadow: 0 0 40px rgba(255, 150, 200, 0.7);
-}
-
-@keyframes floatImg {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-18px);
-  }
+  border-radius: 28px;
+  animation: floatSoft 6s ease-in-out infinite;
+  box-shadow:
+    0 0 60px rgba(210, 220, 255, 0.5),
+    inset 0 0 20px rgba(255, 255, 255, 0.15);
 }
 
 /* ===============================
-   GLASS CARD (HOME)
+   GLASS CARD — COLUMBINA
 =============================== */
 .card {
-  max-width: 420px;
-  padding: 45px;
-  border-radius: 30px;
+  max-width: 440px;
+  padding: 50px;
+  border-radius: 34px;
 
-  background: rgba(255, 200, 230, 0.15);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 45px rgba(255, 140, 200, 0.6);
+  background: rgba(235, 240, 255, 0.08);
+  backdrop-filter: blur(22px);
+  box-shadow:
+    0 0 80px rgba(190, 200, 255, 0.35),
+    inset 0 0 30px rgba(255, 255, 255, 0.08);
 
-  animation: fadeUp 1.2s ease;
   text-align: center;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  opacity: 0;
+  animation:
+    cardAppear 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    floatSoft 7s ease-in-out infinite;
+  animation-delay: 0.3s, 2s;
 }
 
 .card h1 {
-  font-size: 32px;
-  background: linear-gradient(90deg, #ff9ed0, #ffd1e8);
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ffffff, #cfd6ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-align: center;
 }
 
 .card p {
-  margin-top: 15px;
+  margin-top: 18px;
   font-size: 14px;
-  line-height: 1.8;
-  opacity: 0.9;
-  text-align: center;
+  line-height: 1.9;
+  opacity: 0.85;
 }
 
 /* ===============================
-   BUTTON
+   BUTTON — DIVINE SEAL
 =============================== */
 .btn-masuk {
-  animation: pulse 2.5s infinite;
   display: inline-block;
-  margin-top: 30px;
-  padding: 14px 40px;
+  margin-top: 34px;
+  padding: 14px 44px;
+  border-radius: 50px;
 
-  border-radius: 40px;
+  color: #ffffff;
   text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
 
-  background: linear-gradient(90deg, #ff7ac8, #ff4fa0);
-  box-shadow: 0 0 30px rgba(255, 120, 200, 1);
-  animation: pulse 2.5s infinite;
+  background: linear-gradient(90deg, #cfd6ff, #8f9cff);
+  box-shadow: 0 0 40px rgba(200, 210, 255, 0.9);
+  transition: 0.4s ease;
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 25px rgba(255, 120, 200, 0.8);
-  }
-  50% {
-    transform: scale(1.1);
-    box-shadow: 0 0 45px rgba(255, 160, 220, 1);
-  }
+.btn-masuk:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 70px rgba(220, 230, 255, 1);
 }
 
 /* ===============================
-   PAGE (ABOUT / SOSIAL / SUPPORT)
+   PAGE GENERIC
 =============================== */
 .page {
   min-height: 100vh;
-  padding-top: 130px;
-  padding-bottom: 80px;
+  padding-top: 150px;
+  padding-bottom: 90px;
 
   display: flex;
   flex-direction: column;
@@ -207,103 +222,106 @@ body {
 }
 
 .page-title {
-  font-size: 34px;
-  margin-bottom: 10px;
-  color: #ffd1e8;
-  text-shadow: 0 0 15px rgba(255, 150, 220, 0.9);
-  text-align: center;
+  font-size: 36px;
+  margin-bottom: 12px;
+  color: #eef1ff;
+  text-shadow: 0 0 25px rgba(210, 220, 255, 0.8);
 }
 
 .page p {
-  margin-bottom: 50px;
-  opacity: 0.85;
-  text-align: center;
   max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 55px;
+  opacity: 0.8;
 }
 
 /* ===============================
-   SOCIAL GRID
+   SOCIAL GRID & CARD
 =============================== */
 .social-grid {
   width: 100%;
   max-width: 900px;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 40px;
-  justify-items: center;
+  gap: 42px;
 }
 
-/* ===============================
-   SOCIAL CARD
-=============================== */
 .social-card {
-  width: 100%;
-  max-width: 260px;
-  padding: 35px;
-  border-radius: 26px;
+  padding: 36px;
+  border-radius: 30px;
+  background: rgba(235, 240, 255, 0.09);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 45px rgba(190, 200, 255, 0.4);
   text-align: center;
 
-  background: rgba(255, 200, 230, 0.18);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 0 30px rgba(255, 150, 200, 0.5);
-
   opacity: 0;
-  transform: translateY(40px) scale(0.95);
-  animation: fadeUp 0.8s ease forwards;
+  animation:
+    cardAppear 1s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    floatSoft 6s ease-in-out infinite;
 }
 
 .social-card:hover {
-  transform: translateY(-18px) scale(1.08);
-  box-shadow: 0 0 60px rgba(255, 170, 220, 1);
+  transform: translateY(-14px) scale(1.05);
+  box-shadow: 0 0 80px rgba(210, 220, 255, 0.9);
 }
 
-.social-card h2,
-.social-card p {
-  text-align: center;
+.social-card h2 {
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .social-card p {
   font-size: 13px;
   opacity: 0.85;
-  line-height: 1.7;
 }
 
 .social-card a {
   display: inline-block;
-  margin-top: 15px;
-  padding: 10px 28px;
-  border-radius: 30px;
-
-  background: linear-gradient(90deg, #ff7ac8, #ff4fa0);
+  margin-top: 16px;
+  padding: 10px 30px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #cfd6ff, #8f9cff);
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 /* ===============================
-   FOOTER
+   FOOTER — QUIET END
 =============================== */
 .footer {
-  width: 100%;
-  padding: 28px 0;
-  margin-top: 100px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  padding: 30px 0;
   font-size: 13px;
-  letter-spacing: 1px;
-  color: #ffd1e8;
-
-  background: rgba(255, 180, 220, 0.12);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 -6px 25px rgba(255, 120, 180, 0.35);
-
+  letter-spacing: 2px;
+  color: #cfd6ff;
   text-align: center;
+
+  background: rgba(230, 235, 255, 0.06);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 -6px 30px rgba(190, 200, 255, 0.3);
+}
+
+/* ===============================
+   ANIMATIONS
+=============================== */
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes floatSoft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 /* ===============================
@@ -312,256 +330,25 @@ body {
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
-    gap: 35px;
-    padding-top: 100px;
-  }
-
-  .social-grid {
-    padding: 0 15px;
-    gap: 25px;
-  }
-
-  .footer {
-    font-size: 12px;
-    padding: 22px 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .btn-masuk {
-    width: 100%;
-  }
-
-  .social-card {
-    padding: 24px;
-  }
-}
-
-/* =====================================
-   CARD ANIMATION SMOOTH + DELAY
-   (TANPA UBAH EFEK LAMA)
-===================================== */
-
-/* ANIMASI MASUK YANG LEBIH HIDUP */
-@keyframes cardSoftIn {
-  0% {
-    opacity: 0;
-    transform: translateY(40px) scale(0.94);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-6px) scale(1.02);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* HOME CARD */
-.card {
-  opacity: 0;
-  animation: cardSoftIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: 0.2s;
-}
-
-/* SOCIAL CARD BASE */
-.social-card {
-  opacity: 0;
-  animation: cardSoftIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-/* DELAY SATU-SATU (AUTO TERLIHAT HIDUP) */
-.social-card:nth-child(1) {
-  animation-delay: 0.15s;
-}
-.social-card:nth-child(2) {
-  animation-delay: 0.35s;
-}
-.social-card:nth-child(3) {
-  animation-delay: 0.55s;
-}
-.social-card:nth-child(4) {
-  animation-delay: 0.75s;
-}
-.social-card:nth-child(5) {
-  animation-delay: 0.95s;
-}
-.social-card:nth-child(6) {
-  animation-delay: 1.15s;
-}
-
-/* =====================================
-   FLOAT ANIMATION (NAIK TURUN HALUS)
-   TANPA MERUSAK EFEK LAMA
-===================================== */
-
-@keyframes floatSoft {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-/* HOME CARD FLOAT */
-.card {
-  animation: cardSoftIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards,
-    floatSoft 4.5s ease-in-out infinite;
-  animation-delay: 0.2s, 1.6s; /* delay masuk dulu, baru float */
-}
-
-/* SOCIAL CARD FLOAT */
-.social-card {
-  animation: cardSoftIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards,
-    floatSoft 5s ease-in-out infinite;
-}
-
-/* DELAY FLOAT BIAR KELIHATAN HIDUP */
-.social-card:nth-child(1) {
-  animation-delay: 0.15s, 1.2s;
-}
-.social-card:nth-child(2) {
-  animation-delay: 0.35s, 1.6s;
-}
-.social-card:nth-child(3) {
-  animation-delay: 0.55s, 2s;
-}
-.social-card:nth-child(4) {
-  animation-delay: 0.75s, 2.4s;
-}
-.social-card:nth-child(5) {
-  animation-delay: 0.95s, 2.8s;
-}
-.social-card:nth-child(6) {
-  animation-delay: 1.15s, 3.2s;
-}
-
-/* ===============================
-   FIX SOSIAL PAGE MOBILE (FINAL)
-=============================== */
-
-@media (max-width: 768px) {
-  /* NAVBAR lebih tinggi → konten diturunin */
-  .page {
-    padding-top: 180px; /* ini kunci */
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  /* JUDUL */
-  .page-title {
-    font-size: 24px;
-    line-height: 1.4;
-    margin-bottom: 8px;
-  }
-
-  .page p {
-    font-size: 13px;
-    margin-bottom: 35px;
-  }
-
-  /* GRID JADI 1 KOLOM */
-  .social-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
-    max-width: 420px;
-    margin: 0 auto;
-  }
-
-  /* CARD FULL WIDTH */
-  .social-card {
-    width: 100%;
-    max-width: 100%;
-    padding: 26px 22px;
-  }
-
-  /* ICON */
-  .social-card i {
-    font-size: 34px;
-    margin-bottom: 12px;
-  }
-
-  .social-card h2 {
-    font-size: 18px;
-  }
-
-  .social-card p {
-    font-size: 13px;
-  }
-
-  .social-card a {
-    margin-top: 14px;
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* HP KECIL */
-@media (max-width: 480px) {
-  .page {
-    padding-top: 200px;
-  }
-
-  .page-title {
-    font-size: 22px;
-  }
-}
-
-/* ===============================
-   HAMBURGER MENU (MOBILE)
-=============================== */
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 26px;
-  height: 3px;
-  background: #fff;
-  border-radius: 3px;
-  transition: 0.3s ease;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
+    gap: 40px;
+    padding-top: 120px;
   }
 
   .menu {
     position: fixed;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
-
+    inset: 72px 0 0 0;
+    background: rgba(5, 6, 10, 0.95);
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 26px;
-
-    background: rgba(0, 0, 0, 0.88);
-    backdrop-filter: blur(18px);
-
     transform: translateX(100%);
     transition: 0.4s ease;
-    z-index: 9;
   }
 
   .menu.show {
     transform: translateX(0);
   }
 
-  .menu a {
-    font-size: 18px;
+  .hamburger {
+    display: flex;
   }
 }

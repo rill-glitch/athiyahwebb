@@ -405,3 +405,55 @@ body {
     display: flex;
   }
 }
+
+/* ===============================
+   SOCIAL PAGE — MOBILE FIX
+=============================== */
+.social-card i {
+  font-size: 42px;
+  margin-bottom: 14px;
+  color: #ffffff;
+  text-shadow: 0 0 18px rgba(200, 210, 255, 0.9);
+}
+
+.social-card h2 {
+  margin-top: 6px;
+  font-size: 18px;
+}
+
+.social-card p {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+/* ===============================
+   MOBILE LAYOUT FIX
+=============================== */
+@media (max-width: 768px) {
+  .page {
+    padding-top: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .page-title {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .social-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .social-card {
+    padding: 28px 24px;
+    border-radius: 26px;
+  }
+
+  .social-card a {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 15px;
+  }
+}

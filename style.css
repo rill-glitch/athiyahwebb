@@ -504,3 +504,36 @@ body {
     opacity: 1;
   }
 }
+
+/* ===============================
+   PROFILE IMAGE — FIX 1:1 (WAJIB)
+=============================== */
+.profile-img {
+  width: 120px;
+  height: 120px;
+
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 18px;
+  margin-bottom: 16px;
+
+  box-shadow:
+    0 0 25px rgba(200, 210, 255, 0.6),
+    inset 0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+/* ===============================
+   FOUNDER IMAGE — SPECIAL
+=============================== */
+.founder-img {
+  width: 180px;
+  height: 180px;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 0 45px rgba(255, 180, 220, 0.9),
+    inset 0 0 20px rgba(255, 255, 255, 0.25);
+}
